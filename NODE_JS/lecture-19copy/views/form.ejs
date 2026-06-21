@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Student</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Animal stickers */
+        .sticker {
+            position: absolute;
+            font-size: 50px;
+            opacity: 0.7;
+        }
+
+        .dog { top: 10%; left: 10%; }
+        .cat { top: 20%; right: 15%; }
+        .rabbit { bottom: 15%; left: 20%; }
+        .panda { bottom: 10%; right: 10%; }
+        .fox { top: 50%; left: 5%; }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            width: 320px;
+            z-index: 1;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 0;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 15px;
+            text-decoration: none;
+            color: #4CAF50;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sticker dog">🐶</div>
+    <div class="sticker cat">🐱</div>
+    <div class="sticker rabbit">🐰</div>
+    <div class="sticker panda">🐼</div>
+    <div class="sticker fox">🦊</div>
+
+    <div class="container">
+        <a href="/">← Back to Home</a>
+
+        <h2>Add Student</h2>
+
+        <form action="/createdata" method="POST">
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="number" name="age" placeholder="Enter Age" required>
+            <input type="email" name="email" placeholder="Enter Email" required>
+
+            <button type="submit">Add Student</button>
+        </form>
+    </div>
+
+</body>
+</html>

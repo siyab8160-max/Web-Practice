@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students Data</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 30px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .student-card {
+            background-color: white;
+            width: 350px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .student-name {
+            color: #4CAF50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Students Data Profile</h1>
+    <a href="/insertdata">Add student</a>
+    <% allstudents.forEach((element)=> { %>
+
+        <div class="student-card">
+            <h2 class="student-name">
+                <%= element.name %>
+            </h2>
+
+            <p>
+                <span class="label">Age:</span> <%= element.age %>
+                <br>
+
+                <span class="label">Email:</span> <%= element.email %>
+                <br>
+
+                <span class="label">ID:</span> <%= element._id %>
+                <br>
+
+                <!-- <span class="label">Version:</span> <%= element.__v %> -->
+            </p>
+            <a href="/delete/<%=element._id%>">Delete</a>
+            <a href="/edit/<%=element._id%>">Edit</a>
+        </div>
+
+    <% }) %>
+
+</body>
+
+</html>
